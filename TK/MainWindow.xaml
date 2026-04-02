@@ -54,7 +54,7 @@
 
         <!-- ==================== ЛЕВАЯ ПАНЕЛЬ (поля ввода) ==================== -->
         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,10,0">
-
+ 
             <!-- Поле для ввода первой стороны (используется для прямоугольника и треугольника) -->
             <TextBlock x:Name="first" Text="Сторона 1" Margin="0,5,0,0" Visibility="Hidden"/>
             <TextBox x:Name="Side1TextBox" Width="120" Margin="0,2,0,5" Visibility="Hidden" HorizontalAlignment="Left"/>
