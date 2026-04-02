@@ -5,8 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TK"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="300" Width="400">
+    <!-- Основная сетка с двумя колонками и тремя строками -->
+    <Grid Margin="10">
+        <!-- Определение колонок: левая (Auto - под размер содержимого) и правая (* - занимает всё оставшееся место) -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Определение строк: верхняя (Auto), средняя (* - растягивается), нижняя (Auto) -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ==================== ПРАВАЯ ПАНЕЛЬ (выбор фигуры с помощью RadioButton) ==================== -->
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Margin="10,0,0,0">
+
+            <!-- Заголовок группы переключателей -->
+            <TextBlock Text="Вид фигуры" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <!-- Группа переключателей для выбора типа фигуры -->
+            <!-- GroupName объединяет переключатели в одну группу (можно выбрать только один) -->
+
+            <!-- Переключатель для прямоугольника -->
+            <RadioButton x:Name="RectangleRadio" Content="Прямоугольник" 
+                         GroupName="FigureType" Margin="0,0,0,8"
+                         Checked="FigureRadio_Checked"/>
+
+            <!-- Переключатель для круга -->
+            <RadioButton x:Name="CircleRadio" Content="Круг" 
+                         GroupName="FigureType" Margin="0,0,0,8"
+                         Checked="FigureRadio_Checked"/>
+
+            <!-- Переключатель для треугольника -->
+            <RadioButton x:Name="TriangleRadio" Content="Треугольник" 
+                         GroupName="FigureType" Margin="0,0,0,8"
+                         Checked="FigureRadio_Checked"/>
+
+            <!-- Кнопка вычисления периметра -->
+            <!-- IsEnabled="False" - изначально неактивна, пока не выбран переключатель -->
+            <Button x:Name="CalculateButton" Content="Вычислить" 
+                    Width="120" Height="30" Margin="0,30,0,0"
+                    Click="CalculateButton_Click" IsEnabled="False"/>
+        </StackPanel>
+
+        <!-- ==================== ЛЕВАЯ ПАНЕЛЬ (поля ввода) ==================== -->
+        <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,10,0">
+
+            <!-- Поле для ввода первой стороны (используется для прямоугольника и треугольника) -->
+            <TextBlock x:Name="first" Text="Сторона 1" Margin="0,5,0,0" Visibility="Hidden"/>
+            <TextBox x:Name="Side1TextBox" Width="120" Margin="0,2,0,5" Visibility="Hidden" HorizontalAlignment="Left"/>
+
+            <!-- Поле для ввода второй стороны (используется для прямоугольника и треугольника) -->
+            <TextBlock x:Name="second" Text="Сторона 2" Visibility="Hidden"/>
+            <TextBox x:Name="Side2TextBox" Width="120" Margin="0,2,0,5" Visibility="Hidden" HorizontalAlignment="Left"/>
+
+            <!-- Поле для ввода третьей стороны (используется только для треугольника) -->
+            <TextBlock x:Name="thirty" Text="Сторона 3" Visibility="Hidden"/>
+            <TextBox x:Name="Side3TextBox" Width="120" Margin="0,2,0,5" Visibility="Hidden" HorizontalAlignment="Left"/>
+
+            <!-- Поле для ввода радиуса (используется только для круга) -->
+            <TextBlock x:Name="forty"  Text="Радиус" Visibility="Hidden"/>
+            <TextBox x:Name="RadiusTextBox" Width="120" Margin="0,2,0,5" Visibility="Hidden" HorizontalAlignment="Left"/>
+
+            <!-- Блок отображения результата вычислений -->
+            <TextBlock Text="Периметр =" FontWeight="Bold" Margin="0,20,0,5"/>
+            <TextBlock x:Name="ResultTextBlock" Text="—" FontWeight="Bold" FontSize="16"/>
+        </StackPanel>
     </Grid>
+
+
 </Window>
