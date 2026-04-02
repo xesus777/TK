@@ -26,7 +26,9 @@
 ### Скриншот работы приложения
 
 <img width="373" height="282" alt="image" src="https://github.com/user-attachments/assets/28ce0c43-7341-457c-9637-b31b8c5a4cef" />
+
 <img width="369" height="280" alt="image" src="https://github.com/user-attachments/assets/d9eb3191-e683-4a61-8ea1-a2855fd0bb45" />
+
 <img width="370" height="278" alt="image" src="https://github.com/user-attachments/assets/36c3331d-e64c-47fc-90ae-0ec71a2e5159" />
 
 ---
