@@ -4,7 +4,7 @@
     public sealed class Test1
     {
         // ==================== ТЕСТЫ ДЛЯ ПРЯМОУГОЛЬНИКА ====================
-         
+          
         [TestMethod]
         public void Rectangle_ValidSides_ReturnsCorrectPerimeter()
         {
